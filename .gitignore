@@ -1,0 +1,432 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Models and data (если большие файлы)
+models/*.pkl
+data/
+!models/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+3. Инициализация репозитория на GitHub
+На GitHub:
+
+Зайдите на github.com
+
+Нажмите "New repository"
+
+Название: heart-attack-predictor
+
+Описание: "ML API for heart attack risk prediction"
+
+Public/Private по выбору
+
+Не добавляйте README, .gitignore или license - мы сделаем это локально
+
+Локально:
+
+bash
+# Добавьте файлы в git
+git add .
+git commit -m "Initial project structure"
+
+# Свяжите с GitHub репозиторием
+git remote add origin https://github.com/ваш-username/heart-attack-predictor.git
+git branch -M main
+git push -u origin main
+4. 📁 Finalная структура репозитория
+text
+heart-attack-predictor/
+├── app/
+│   ├── __init__.py
+│   ├── main.py              # FastAPI приложение
+│   ├── models.py            # Pydantic модели
+│   ├── predictor.py         # Класс для предсказаний
+│   └── config.py            # Конфигурация
+├── models/
+│   ├── .gitkeep             # Пустой файл для сохранения папки
+│   ├── best_model.pkl       # Ваша обученная модель
+│   └── preprocessor.pkl     # Препроцессор
+├── notebooks/
+│   ├── research.ipynb       # Исследование и обучение
+│   └── demo.ipynb           # Демонстрация работы API
+├── tests/
+│   ├── __init__.py
+│   └── test_api.py          # Тесты API
+├── utils/
+│   ├── __init__.py
+│   └── prediction_utils.py  # Утилиты для предсказаний
+├── scripts/
+│   ├── generate_predictions.py    # Скрипт генерации предсказаний
+│   └── validate_predictions.py    # Скрипт валидации
+├── data/
+│   └── .gitkeep             # Для тестовых данных
+├── requirements.txt         # Зависимости Python
+├── Dockerfile              # Конфигурация Docker
+├── .gitignore              # Игнорируемые файлы
+└── README.md               # Документация
+5. 📋 Что должно быть в README.md
+markdown
+# Heart Attack Risk Prediction API
+
+ML сервис для предсказания риска сердечного приступа.
+
+## 🚀 Быстрый старт
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/ваш-username/heart-attack-predictor.git
+cd heart-attack-predictor
+Установите зависимости:
+
+bash
+pip install -r requirements.txt
+Запустите сервер:
+
+bash
+uvicorn app.main:app --reload
+📁 Структура проекта
+app/ - FastAPI приложение
+
+models/ - Обученные ML модели
+
+notebooks/ - Исследования и демо
+
+tests/ - Тесты
+
+scripts/ - Вспомогательные скрипты
+
+🔧 Использование
+См. подробную документацию в демо-ноутбуке
+
+text
+
+### 6. ⚠️ Важные моменты:
+
+1. **Модели (.pkl файлы)** - если они большие, добавьте в `.gitignore` и используйте Git LFS или загружайте отдельно
+2. **Данные** - не храните большие данные в репозитории
+3. **Коммиты** - делайте осмысленные коммиты:
+   ```bash
+   git add .
+   git commit -m "feat: add FastAPI application structure"
+   git commit -m "docs: update README with installation instructions"
+   git commit -m "fix: correct prediction format in utils"
+Теперь у вас будет красивый, хорошо структурированный репозиторий на GitHub! 🎯
+
+где вводить все эти команды
+# Создайте основную папку проекта
+mkdir heart_attack_predictor
+cd heart_attack_predictor
+
+# Создайте всю структуру папок
+mkdir -p app models notebooks tests utils scripts data
+
+# Создайте основные файлы
+touch app/__init__.py app/main.py app/models.py app/predictor.py app/config.py
+touch models/.gitkeep  # чтобы папка была видна в git
+touch notebooks/research.ipynb notebooks/demo.ipynb
+touch tests/__init__.py tests/test_api.py
+touch utils/__init__.py utils/prediction_utils.py
+touch scripts/generate_predictions.py scripts/validate_predictions.py
+touch requirements.txt Dockerfile README.md .gitignore
+
+# Инициализируйте git
+git init
+Все эти команды нужно вводить в терминале (командной строке) вашей операционной системы. Вот подробное руководство:
+
+🖥️ Для Windows:
+1. Откройте командную строку:
+Нажмите Win + R, введите cmd и нажмите Enter
+
+Или в поиске напишите "Командная строка"
+
+2. Используйте эти команды:
+cmd
+:: Создайте основную папку проекта
+mkdir heart_attack_predictor
+cd heart_attack_predictor
+
+:: Создайте структуру папок
+mkdir app
+mkdir models
+mkdir notebooks
+mkdir tests
+mkdir utils
+mkdir scripts
+mkdir data
+
+:: Создайте файлы
+type nul > app\__init__.py
+type nul > app\main.py
+type nul > app\models.py
+type nul > app\predictor.py
+type nul > app\config.py
+type nul > models\.gitkeep
+type nul > notebooks\research.ipynb
+type nul > notebooks\demo.ipynb
+type nul > tests\__init__.py
+type nul > tests\test_api.py
+type nul > utils\__init__.py
+type nul > utils\prediction_utils.py
+type nul > scripts\generate_predictions.py
+type nul > scripts\validate_predictions.py
+type nul > requirements.txt
+type nul > Dockerfile
+type nul > README.md
+type nul > .gitignore
+
+:: Инициализируйте git
+git init
+🍎 Для macOS/Linux:
+1. Откройте Terminal:
+macOS: Finder → Applications → Utilities → Terminal
+
+Linux: Ctrl + Alt + T
+
+2. Используйте оригинальные команды:
+bash
+# Создайте основную папку проекта
+mkdir heart_attack_predictor
+cd heart_attack_predictor
+
+# Создайте всю структуру папок
+mkdir -p app models notebooks tests utils scripts data
+
+# Создайте основные файлы
+touch app/__init__.py app/main.py app/models.py app/predictor.py app/config.py
+touch models/.gitkeep
+touch notebooks/research.ipynb notebooks/demo.ipynb
+touch tests/__init__.py tests/test_api.py
+touch utils/__init__.py utils/prediction_utils.py
+touch scripts/generate_predictions.py scripts/validate_predictions.py
+touch requirements.txt Dockerfile README.md .gitignore
+
+# Инициализируйте git
+git init
+🔧 Альтернативный способ (рекомендуется):
+1. Создайте скрипт setup_project.sh:
+bash
+#!/bin/bash
+
+# Создайте основную папку проекта
+mkdir heart_attack_predictor
+cd heart_attack_predictor
+
+# Создайте структуру папок
+mkdir -p app models notebooks tests utils scripts data
+
+# Создайте файлы в app/
+touch app/__init__.py
+touch app/main.py
+touch app/models.py
+touch app/predictor.py
+touch app/config.py
+
+# Создайте файлы в других папках
+touch models/.gitkeep
+touch notebooks/research.ipynb
+touch notebooks/demo.ipynb
+touch tests/__init__.py
+touch tests/test_api.py
+touch utils/__init__.py
+touch utils/prediction_utils.py
+touch scripts/generate_predictions.py
+touch scripts/validate_predictions.py
+
+# Создайте корневые файлы
+touch requirements.txt
+touch Dockerfile
+touch README.md
+touch .gitignore
+
+# Инициализируйте git
+git init
+
+echo "✅ Project structure created successfully!"
+echo "📁 Location: $(pwd)"
+2. Запустите скрипт:
+bash
+# Сделайте скрипт исполняемым
+chmod +x setup_project.sh
+
+# Запустите скрипт
+./setup_project.sh
+📍 Где именно вводить команды:
+Откройте терминал/командную строку
+
+Перейдите в папку, где хотите создать проект:
+
+bash
+cd ~/Documents  # или в любую другую папку
+Выполните команды построчно
+
+✅ Проверка результата:
+После выполнения команд проверьте структуру:
+
+bash
+# Для Linux/macOS
+ls -la
+find . -type f -name "*.py" -o -name "*.ipynb" -o -name "*.txt"
+
+# Для Windows
+dir
+tree /F
+⚠️ Если возникают ошибки:
+Убедитесь, что Git установлен:
+
+bash
+git --version
+Если нет прав - используйте sudo (Linux/macOS)
+
+Если папка уже существует - удалите ее или выберите другое имя
+
+Теперь у вас есть полная структура проекта! 🎯
+
+это все тоже надо вводить в командную строку?
+# .gitignore
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Models and data (если большие файлы)
+models/*.pkl
+data/
+!models/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+Нет, эти строки не нужно вводить в командную строку! Это содержимое файла .gitignore, который нужно создать и заполнить текстом.
+
+📝 Как правильно создать .gitignore файл:
+Способ 1: Создание через терминал (рекомендуется)
+bash
+# Перейдите в папку вашего проекта
+cd heart_attack_predictor
+
+# Создайте файл .gitignore и откройте его для редактирования
+# Для Linux/macOS:
+nano .gitignore
+
+# Для Windows:
+notepad .gitignore
+Способ 2: Создание в текстовом редакторе
+Откройте любой текстовый редактор (Notepad++, VSCode, Sublime Text)
+
+Скопируйте весь текст с содержимым .gitignore
+
+Сохраните файл как .gitignore в корневой папке вашего проекта
+
+Способ 3: Команда для быстрого создания (Linux/macOS)
+bash
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Models and data (если большие файлы)
+models/*.pkl
+data/
+!models/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
