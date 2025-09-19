@@ -1,0 +1,17 @@
+# This file keeps the models directory in Git
+# Even when .pkl files are ignored in .gitignore
+
+Place your model files here:
+- best_model.pkl (your trained ML model)
+- best_threshold.pkl (optimized threshold value)
+
+These files are essential for the API to work but are 
+excluded from Git version control due to their size.
+
+To add your models:
+1. Train and save your model in Jupyter notebook:
+   import joblib
+   joblib.dump(model, 'models/best_model.pkl')
+   joblib.dump(threshold, 'models/best_threshold.pkl')
+
+2. Ensure they are in this directory before running the API
